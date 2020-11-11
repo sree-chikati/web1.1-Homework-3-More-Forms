@@ -7,6 +7,20 @@ Compliments Results
 {% block content %}
 
 <!-- Your HTML code goes here! -->
+Hi there {{name}}!
+
+<ul>
+    {% if compliments == "yes" %}
+        Here are some compliments:<br><br>
+        {% for i in range (compliments_num) %}
+            <li>You are {{ran_comp[i]}}</li>
+        {% endfor %}
+    {% elif compliments == "no" %}
+        That's alright! Have a great day :)
+    {% else %}
+        Please try again with the right inputs.
+    {% endif %}
+</ul>
 
 
 
