@@ -16,7 +16,10 @@ Animal Facts
             <!-- TODO: Use a for loop to show one option element for each 
                 animal. -->
             <select name="animal">
-                <option value="koala">koala</option>
+                <option value="none">None</option>
+                {% for key, value in list_animal.items() %}
+                    <option value="{{key}}">{{key}}</option>
+                {% endfor %}
             </select>
         </label>
 
@@ -26,14 +29,18 @@ Animal Facts
 
 <!-- TODO: If an animal was chosen, show the section below with the appropriate 
     animal fact. -->
-
-<section id="form_results">
-    <p>
-        Here is your animal fact:
-    </p>
-    <p>
-        <em>Your animal fact goes here.</em>
-    </p>
-</section>
+{% if picked_animal in list_animal %}
+    <section id="form_results">
+        <p>
+            Here is your {{picked_animal}} fact:
+        </p>
+        <br>
+        <p>
+            {{list_animal[picked_animal]}}
+        </p>
+    </section>
+{% elif chosen_animal == "none" %}
+    <p>No Animal was picked</p>
+{% endif %}
 
 {% endblock %}

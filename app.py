@@ -77,23 +77,26 @@ def compliments_results():
 ################################################################################
 
 animal_to_fact = {
-    'koala': 'Koala fingerprints are so close to humans\' that they could taint crime scenes.',
-    'parrot': 'Parrots will selflessly help each other out.',
-    'mantis shrimp': 'The mantis shrimp has the world\'s fastest punch.',
-    'lion': 'Female lions do 90 percent of the hunting.',
-    'narwhal': 'Narwhal tusks are really an "inside out" tooth.'
+    'Koala': 'Koala fingerprints are so close to humans\' that they could taint crime scenes.',
+    'Parrot': 'Parrots will selflessly help each other out.',
+    'Mantis shrimp': 'The mantis shrimp has the world\'s fastest punch.',
+    'Lion': 'Female lions do 90 percent of the hunting.',
+    'Narwhal': 'Narwhal tusks are really an "inside out" tooth.'
 }
 
 @app.route('/animal_facts')
 def animal_facts():
     """Show a form to choose an animal and receive facts."""
+    user_animal = request.args.get("animal")
 
     # TODO: Collect the form data and save as variables
 
     context = {
         # TODO: Enter your context variables here for:
         # - the list of all animals (get from animal_to_fact)
+        "list_animal": animal_to_fact,
         # - the chosen animal fact (may be None if the user hasn't filled out the form yet)
+        "picked_animal": user_animal
     }
     return render_template('animal_facts.html', **context)
 
