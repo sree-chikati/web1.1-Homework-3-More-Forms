@@ -81,7 +81,10 @@ animal_to_fact = {
     'Parrot': 'Parrots will selflessly help each other out.',
     'Mantis shrimp': 'The mantis shrimp has the world\'s fastest punch.',
     'Lion': 'Female lions do 90 percent of the hunting.',
-    'Narwhal': 'Narwhal tusks are really an "inside out" tooth.'
+    'Narwhal': 'Narwhal tusks are really an "inside out" tooth.',
+    "White tiger": 'White tigers can weigh up to around 570 pounds, which is a little more than the weight of two giant pandas.',
+    "Giant panda": 'Giant pandas spend 10-16 hours a day feeding, mainly on bamboo.',
+    "Lynx": 'The Iberian lynx is the the most endangered cat in the world'
 }
 
 @app.route('/animal_facts')
