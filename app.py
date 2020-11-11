@@ -214,7 +214,7 @@ def gif_search():
         }
 
         # Uncomment me to see the result JSON!
-        # pp.pprint(gifs)
+        pp.pprint(gifs)
 
         return render_template('gif_search.html', **context)
     else:
